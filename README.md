@@ -8,16 +8,16 @@ You need to run this container on "host" mode for correctly sending the magic pa
 
 Environnement Variables
 
-SERVER_PORT
+**SERVER_PORT**
 The listening port waiting the initial HTTP request
 
-TIMEOUT
+**TIMEOUT**
 Delay before timeout
 
-MAC
+**MAC**
 The target MAC Address of the target machine
 
-REDIRECT
+**REDIRECT**
 The redirect URL when machine is awake.
 
 ```docker
