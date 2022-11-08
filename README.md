@@ -25,10 +25,10 @@ docker run -d \
                 --name pwr \
                 --restart unless-stopped \
                 -e TZ=Europe/Paris \
-                -e SERVER_PORT=8565/Paris \
+                -e SERVER_PORT=8565 \
                 -e TIMEOUT=120 \
                 -e MAC=52:54:00:42:35:5C \
-                -e REDIRECT=http://you.awaken.service \
+                -e REDIRECT=http://your.awaken.service \
                 --network host \
                 waaman/proxy-wol-redirect:latest
 ```
