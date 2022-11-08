@@ -2,7 +2,7 @@
 
 Source for https://hub.docker.com/r/waaman/proxy-wol-redirect
 
-This image provides a way to wake up machine that host web services before requesting those services.
+This image provides **PWR**, a way to wake up machine that host web services before requesting those services.
 
 You need to run this container on "host" mode for correctly sending the magic packet.
 
