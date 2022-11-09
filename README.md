@@ -50,7 +50,7 @@ Result:
 When i go to http://192.168.1.40:8565:
 - the magic packet is sent to the target machine MAC address
 - waiting until TIMEOUT for wake up
-- when wake up the HTTP request is redirect to http://192.168.1.50
+- when wake up the HTTP request is redirected to http://192.168.1.50
 
 
 
