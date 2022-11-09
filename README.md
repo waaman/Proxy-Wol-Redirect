@@ -34,6 +34,7 @@ docker run -d \
 ```
 
 **USAGE**
+
 As an example:
 - the host running this container has ip 192.168.1.40.
 - i set 8565 as SERVER_PORT
@@ -41,6 +42,7 @@ As an example:
 - i set the webui of the service this target machine offer when awake. Ex: http://192.168.1.50
 
 Result:
+
 When i go to http://192.168.1.40:8565:
 - the magic packet is sent to the target machine MAC address
 - waitinh until TIMEOUT for wake up
