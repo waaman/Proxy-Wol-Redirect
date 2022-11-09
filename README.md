@@ -32,3 +32,19 @@ docker run -d \
                 --network host \
                 waaman/proxy-wol-redirect:latest
 ```
+
+**USAGE**
+As an example:
+- the host running this container has ip 192.168.1.40.
+- i set 8565 as SERVER_PORT
+- i set the MAC address of the target machine i want to wake up
+- i set the webui of the service this target machine offer when awake. Ex: http://192.168.1.50
+
+Result:
+When i go to http://192.168.1.40:8565:
+- the magic packet is sent to the target machine MAC address
+- waitinh until TIMEOUT for wake up
+- when wake up the HTTP request is redirect to http://192.168.1.50
+
+
+
