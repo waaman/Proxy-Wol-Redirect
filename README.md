@@ -1,7 +1,8 @@
 # Proxy-Wol-Redirect
 
 Source for https://hub.docker.com/r/waaman/proxy-wol-redirect
-Discord channel: https://discord.gg/kgpjVvX2fb
+
+**Discord channel**: https://discord.gg/kgpjVvX2fb
 
 This image provides **PWR**, a way to wake up machine hosting web services before requesting those services.
 
