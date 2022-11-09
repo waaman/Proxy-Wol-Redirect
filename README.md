@@ -8,6 +8,7 @@ You need to run this container on "host" mode for correctly sending the magic pa
 
 Environnement Variables
 
+
 **SERVER_PORT**
 
 The listening port waiting the initial HTTP request
