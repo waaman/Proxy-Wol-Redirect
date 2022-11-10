@@ -1,4 +1,4 @@
-# Proxy-Wol-Redirect
+# Proxy-WOL-Redirect
 
 Source for https://hub.docker.com/r/waaman/proxy-wol-redirect
 
