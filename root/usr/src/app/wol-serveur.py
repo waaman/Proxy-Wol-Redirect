@@ -9,6 +9,7 @@ serverPort  = int(os.environ["SERVER_PORT"])
 macAdress   = os.environ["MAC"]
 domain      = os.environ["REDIRECT"]
 timeout     = int(os.environ["TIMEOUT"])
+ssl_verify  = bool(os.environ["SSL_VERIFY"])
 timewait    = 1
 
 class MyServer(BaseHTTPRequestHandler):
@@ -24,14 +25,14 @@ class MyServer(BaseHTTPRequestHandler):
     def waitForResourceAvailable(self, domain, timeout, timewait):
         timer = 0
         # check every "timewait" seconds wether domain is available
-        while requests.get(domain).status_code == 502:
+        while requests.get(domain, verify=ssl_verify).status_code == 502:
             print("Resource not available")
             time.sleep(timewait)
             timer += timewait
             if timer > timeout:
                 print("Resource timeout")
                 break
-            if requests.get(domain).status_code == 200:
+            if requests.get(domain, verify=ssl_verify).status_code == 200:
                 print("Resource available")
                 break
 
