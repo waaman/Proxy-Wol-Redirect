@@ -25,11 +25,11 @@ class MyServer(BaseHTTPRequestHandler):
     def waitForResourceAvailable(self, domain, timeout, timewait, ssl_verify):
         timer = 0
         if ssl_verify != "False":
-            self.checkAvailability(self, domain,timer)
+            self.checkAvailability(domain,timer)
         else:
-            self.checkAvailabilityUnsecure(self, domain,timer)        
+            self.checkAvailabilityUnsecure(domain,timer)        
     
-    def checkAvailability(domain, timer):
+    def checkAvailability(self, domain, timer):
         while requests.get(domain).status_code == 502:
             print("Resource not available")
             time.sleep(timewait)
@@ -41,7 +41,7 @@ class MyServer(BaseHTTPRequestHandler):
                 print("Resource available")
                 break     
     
-    def checkAvailabilityUnsecure(domain, timer):
+    def checkAvailabilityUnsecure(self, domain, timer):
         while requests.get(domain, verify=False).status_code == 502:
             print("Resource not available")
             time.sleep(timewait)
