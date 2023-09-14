@@ -25,9 +25,9 @@ class MyServer(BaseHTTPRequestHandler):
     def waitForResourceAvailable(self, domain, timeout, timewait, ssl_verify):
         timer = 0
         if ssl_verify != "False":
-            self.checkAvailability(domain,timer)
+            self.checkAvailability(self, domain,timer)
         else:
-            self.checkAvailabilityUnsecure(domain,timer)        
+            self.checkAvailabilityUnsecure(self, domain,timer)        
     
     def checkAvailability(domain, timer):
         while requests.get(domain).status_code == 502:
