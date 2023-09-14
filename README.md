@@ -27,6 +27,11 @@ The target MAC Address of the target machine
 
 The redirect URL when machine is awake.
 
+**SSL_VERIFY**
+
+To accept all ssl certificate without verification set this environment variable to "False". Usefull for self signed certificate - thx sjung87.
+
+
 ```docker
 docker run -d \
                 --name pwr \
@@ -36,6 +41,7 @@ docker run -d \
                 -e TIMEOUT=120 \
                 -e MAC=52:54:00:42:35:5C \
                 -e REDIRECT=http://your.awaken.service \
+		-e SSL_VERIFY=False \
                 --network host \
                 waaman/proxy-wol-redirect:latest
 ```
@@ -45,8 +51,9 @@ docker run -d \
 As an example:
 - the host running this container has ip 192.168.1.40.
 - i set 8565 as SERVER_PORT
-- i set the MAC address of the target machine i want to wake up
+	- i set the MAC address of the target machine i want to wake up
 - i set the webui of the service this target machine offer when awake. Ex: http://192.168.1.50
+- If is sent SSL_VERIFY=False there is no verification of https certificate 
 
 Result:
 
